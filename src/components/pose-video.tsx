@@ -27,7 +27,7 @@ export function PoseVideo({ pose, video }: { pose: Pose | null, video: HTMLVideo
     ctx.save();
     ctx.scale(-1, 1);
     ctx.translate(-video.width, 0);
-    ctx.drawImage(video, 0, 0, video.width, video.height);
+    // ctx.drawImage(video, 0, 0, video.width, video.height);
     ctx.restore();
 
     const minPartConfidence = 0.3;
@@ -43,7 +43,7 @@ export function PoseVideo({ pose, video }: { pose: Pose | null, video: HTMLVideo
   })
 
   return (
-    <canvas ref={canvasRef} width={600} height={500}/>
+    <canvas style={{top: 0, left: 0, zIndex: 5}} ref={canvasRef} width={600} height={500}/>
   )
 }
 
